@@ -107,13 +107,192 @@ a{
   height: 100%;
   width: 5px;
   background-color: #fff;
-  animation: blink 0.5s step-end infinite;
+  animation: blink 1s step-end infinite;
 }
 
 .type{
    font-size: 1.3em;
+   font-family :cursive,sans-serif;
 }
 
+
+#Projects{
+  width: 100%;
+  background-color: #000000e1;
+  color: #fff;
+  padding: 2.5em;
+}
+
+#Projects h1{
+  text-align: center;
+  margin-bottom: 1.4em;
+  font-size: 2.5em;
+}
+
+.projectContainer{
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  width: 90%;
+  gap: 1.5em;
+}
+
+
+.project{
+  width: max(400px, 25vw);
+  border-radius: 25px;
+  position: relative;
+}
+
+
+.container{
+  --rotatex : 0deg;
+  --rotatey : 0deg;
+  --default-rotate : 10deg;
+  transform: perspective(700px) rotateY(var(--rotatey)) rotateX(var(--rotatex));
+  transition: transform 0.5s;
+}
+
+.spot{
+   width: calc(100% / 3);
+   height: calc(100% / 2);
+   display: inline-block;
+   position: absolute;
+   z-index: 1;
+}
+
+.spot:nth-child(1){
+  top: 0;
+  left: 0;
+}
+
+.spot:nth-child(2){
+  top: 0;
+  left: calc(100% / 3);
+}
+
+.spot:nth-child(3){
+  top: 0;
+  right: 0;
+}
+.spot:nth-child(4){
+  left: 0;
+  bottom: 20%;
+}
+.spot:nth-child(5){
+  bottom: 20%;
+  left: calc(100% / 3);
+}
+
+.spot:nth-child(6){
+  bottom: 20%;
+  right: 0;
+}
+
+.spot:nth-child(1):hover ~ .container{
+   --rotatex : var(--default-rotate);
+   --rotatey : calc(var(--default-rotate) * -1);
+}
+
+.spot:nth-child(2):hover ~ .container{
+  --rotatex : var(--default-rotate);
+}
+
+.spot:nth-child(3):hover ~ .container{
+  --rotatex : var(--default-rotate);
+  --rotatey : var(--default-rotate);
+}
+
+.spot:nth-child(4):hover ~ .container{
+  --rotatex : calc(var(--default-rotate) * -1);
+  --rotatey : calc(var(--default-rotate) * -1);
+}
+
+.spot:nth-child(5):hover ~ .container{
+  --rotatex : calc(var(--default-rotate) * -1);
+}
+
+.spot:nth-child(6):hover ~ .container{
+  --rotatex : calc(var(--default-rotate) * -1);
+  --rotatey : var(--default-rotate);
+}
+
+
+
+
+.imgContainer{
+  width: 100%;
+}
+
+.imgContainer img{
+  width: 100%;
+  border-radius: 15px 15px 0 0;
+  transform: translateY(2%);
+}
+
+
+.toolsUsed img{
+  width: 30px;
+  height: 30px;
+}
+
+.projectdetails{
+  background-color: #fff;
+  color: #000;
+  display: flex;
+  flex-direction: column;
+  font-family :'Courier New', Courier, monospace;
+  gap: 5px;
+  padding: 1em;
+  border-radius: 0 0 15px 15px;
+}
+
+.projectdetails h3{
+  text-align: center;
+}
+
+.toolsUsed{
+  width: 50%;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+
+.btns a{
+  text-decoration: none;
+  color: inherit;
+}
+
+
+.btns{
+  display: flex;
+  justify-content: space-between;
+  font-family: inherit;
+}
+
+.btns button{
+  width: 45%;
+  height: 25px;
+  border-radius: 5px;
+  border: none;
+  color: #000;
+}
+
+
+.btns button:hover{
+  transform: scale(1.2);
+  background-color: #000;
+  color: #fff;
+}
+
+
+button a{
+  display: inline-block;
+  width: 100%;
+}
 
 @keyframes blink {
   from, to{border-right: 0.15em solid orange;}
