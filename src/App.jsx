@@ -4,6 +4,7 @@ import './App.css'
 import Navbar from './Components/Navbar';
 import Home from './Components/Home';
 import Projects from './Components/Projects';
+import ContactMe from './Components/ContactMe';
 
 import Cvgenerator from "./assets/images/projects/CvGenerator.jpeg";
 import MemoryGame from "./assets/images/projects/memoryGame.jpeg";
@@ -27,6 +28,7 @@ function App() {
       <Navbar />
       <Home />
       <Projects projectList={projects}/>
+      <ContactMe />
     </>
   )
 }
