@@ -11,7 +11,7 @@ export default function Navbar(){
         <nav>
             <a href="#Home">Home</a>
             <a href="#Projects">Projects</a>
-            <a href="#">Contact Me</a>
+            <a href="#Contact">Contact Me</a>
         </nav>
     </header>
 }
