@@ -16,18 +16,20 @@ export default function Home(){
     let typeSpeed = 100;
     let eraseSpeed = 30;
     let Erase = 1000;
+    let style = {background : "center/cover no-repeat " + "url(" + backgrounds[currIndex].img + ")"};
 
-    let style = {background : "url(" + backgrounds[currIndex].img + ")", backgroundPosition : "center", backgroundSize : "cover", backgroundRepeat : "no-repeat"};
+    useEffect(()=>{
+        const timer = setTimeout(()=>{
+            document.querySelector(".profile").classList.add("animate");
+        }, 500)
+        return ()=> clearTimeout(timer);
+    }, [])
 
-
-
+    
     useEffect(()=>{
             let typeTimeout = null;
             let bigEraseTimeout = null;
             let eraseTimeout = null;
-            document.querySelector("#Home").style.backgroundPosition = "center";
-            document.querySelector("#Home").style.backgroundSize = "cover";
-            document.querySelector("#Home").style.backgroundRepeat = "no-repeat";
         function type(){
             let target = document.querySelector(".interests .type");
 
