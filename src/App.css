@@ -61,6 +61,7 @@ a{
   left: 0;
   top: 0;
   transition: background-image 1s linear;
+  -webkit-backface-visibility: hidden
 }
 
 
@@ -502,7 +503,7 @@ textarea{
     transform: translateY(25%);
   }
   100%{
-    transform: translateY(0.5%);
+    transform: translateY(1%);
   }
 }
 
