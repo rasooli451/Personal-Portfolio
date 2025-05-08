@@ -1,6 +1,6 @@
 
 
-import profilepic from "../assets/images/Me/MeWithoutBgV1.png";
+import profilepic from "../assets/images/Me/MeV1NoBgupscalededited.png";
 import github from "../assets/icons/github.svg";
 import linkedin from "../assets/icons/linkedin-original.svg";
 import books from "../assets/images/bgImages/books.jpg";
@@ -10,7 +10,7 @@ import ronaldo from "../assets/images/bgImages/Ronaldo.jpg";
 import { useState, useEffect} from "react";
 
 export default function Home(){
-    const backgrounds = [{img : books, description : "Sometimes in my free time, a book and a cup of coffee is enough to transfer me to another world where my imagination is unrestricted and anything is possible."}, {img : cinema, description : "As a dedicated cenephile, I can't appreciate cinema enough, I've watched most of the classics and have enjoyed modern masterpieces."}, {img : games, description : "Part of the reason I am interested in game development is because I like playing games, I've been an active gamer since I was a child and still play sometimes."}, {img : ronaldo, description : "I love watching and playing Football, and have been a fan of Cristiano Ronaldo for a long time now, he is my favorite player and him and Messi are the reason I fell in love with football."}];
+    const backgrounds = [{img : books, description : "Sometimes in my free time, a book and a cup of coffee is enough to transfer me to another world where my imagination is unrestricted and anything is possible."}, {img : cinema, description : "As a dedicated cenephile, I can't appreciate cinema enough, I've watched most of the classics and have enjoyed modern masterpieces."}, {img : games, description : "Part of the reason I am interested in game development is because I like playing games, I've been an active gamer since I was a child and still play sometimes."}, {img : ronaldo, description : "I love watching and playing Football, i've been obsessed with it ever since I started playing when I was little and still do sometimes."}];
     const [currIndex, setIndex] = useState(0);
     let charIndex = 0;
     let typeSpeed = 100;
@@ -24,6 +24,7 @@ export default function Home(){
         }, 500)
         return ()=> clearTimeout(timer);
     }, [])
+
 
     
     useEffect(()=>{
@@ -67,12 +68,14 @@ export default function Home(){
     })
 
     
-    return <section id="Home" style={style} >
+    return <section id="Home">
+        <div className="background" style={style}>
+        </div>
         <div className="self row">
             <img src={profilepic} alt="Farhad Rasoli" className="profile"/>
             <div className="card">
                 <h2>About Me</h2>
-                <p>Hello there&#x1F44B;, welcome to my Portfolio website&#x1F60A;, I am Farhad Rasoli, a 2nd year Computer Science student at York University with a passion for web development and game development.</p>
+                <p>Hello there&#x1F44B;, welcome to my Portfolio website&#x1F60A;, I am <b>Farhad Rasoli</b>, a 2nd year Computer Science student at York University with a passion for web development and game development.</p>
                 <div className="links">
                     <a href="https://github.com/rasooli451" target={"_blank"}><img src={github} alt="github" /></a>
                     <a href="https://www.linkedin.com/in/farhad-rasoli-7b7230294/" target={"_blank"}><img src={linkedin} alt="linkedin" /></a>
