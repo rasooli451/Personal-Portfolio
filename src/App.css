@@ -4,8 +4,8 @@
 
 .navbar{
   width: 100%;
-  padding: 1em;
-  background-color: #000000ea;
+  padding: 0.5em;
+  background-color: #000000de;
 
 }
 
@@ -49,17 +49,31 @@ a{
   justify-content: center;
   align-items: flex-start;
   position: relative;
-  background-size: cover;
-  background-repeat: no-repeat;
-  transition: background-position 0.5s ease;
 }
+
+
+
+.background{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  left: 0;
+  top: 0;
+  transition: background-image 1s linear;
+}
+
+
+
 
 
 .interests{
   position: absolute;
   margin: 0 auto;
+  text-align: center;
   width: 90%;
   top: 5%;
+
 
 }
 
@@ -74,12 +88,26 @@ a{
   padding: 1em;
   background-color: aquamarine;
   color: #000;
-  display: flex;
-  flex-direction: column;
   gap: 15px;
   border-radius: 30px;
-  z-index: 10;
+  position: relative;
+  transition: transform 0.5s ease;
 }
+
+.card p{
+   font-size: 1.2em;
+   line-height: 25px;
+}
+
+
+.card:hover{
+  transform: scale(1.1);
+}
+
+.card h2, .card p{
+  margin: 0.5em 0;
+}
+
 
 
 .links img{
@@ -100,8 +128,7 @@ a{
 
 .profile{
   width: 100%;
-  animation: showUp 1s ease-in forwards;
-  z-index: -1;
+  animation: showUp 2s ease-in forwards;
 }
 
 .cursor{
@@ -301,12 +328,14 @@ button a{
 #Contact{
   width: 100%;
   min-height: 800px;
-  background-color: #8261fb;
+  background-color: #1b133a;
   color: #000;
+  position: relative;
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 2em;
+  overflow: hidden;
 }
 
 
@@ -359,7 +388,8 @@ textarea{
   border: none;
   outline: none;
   border-radius: 15px;
-  background-color: #8261fb;
+  background-color: #291f4e;
+  color: #fff;
   cursor: pointer;
   box-shadow: 0 0 10px rgba(0,0,0,.1);
 }
@@ -368,6 +398,97 @@ textarea{
 .send:hover{
   background-color: #624ec6;
 }
+
+
+.snowflake{
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  border: none;
+  outline: none;
+  background-color: snow;
+  top: -100px;
+  animation: snowing 5s infinite ease-in-out;
+}
+
+
+.snowflake:nth-child(1){
+  left: 7%;
+}
+
+.snowflake:nth-child(2){
+  left: 10%;
+  animation-delay: 3s;
+}
+
+.snowflake:nth-child(3){
+  left: 20%;
+  animation-delay: 2s;
+}
+
+.snowflake:nth-child(4){
+  left: 30%;
+  animation-delay: 5s;
+}
+
+.snowflake:nth-child(5){
+  left: 32%;
+  animation-delay: 4s;
+}
+
+
+.snowflake:nth-child(6){
+  left: 65%;
+  animation-delay: 3s;
+}
+
+.snowflake:nth-child(7){
+  left: 69%;
+  animation-delay: 6s;
+}
+
+.snowflake:nth-child(8){
+  left: 75%;
+  animation-delay: 2s;
+}
+
+.snowflake:nth-child(9){
+  left: 80%;
+  animation-delay: 3s;
+}
+
+.snowflake:nth-child(10){
+  left: 86%;
+}
+
+.snowflake:nth-child(11){
+  left: 94%;
+  animation-delay: 1s;
+}
+
+
+
+
+@keyframes snowing {
+  0%{
+    top: -50px;
+  }
+
+  100%{
+    top: 105%;
+    opacity: 0.5;
+  }
+}
+
+
+
+
+
+
+
+
+
 
 @keyframes blink {
   from, to{border-right: 0.15em solid orange;}
@@ -378,12 +499,10 @@ textarea{
 
 @keyframes showUp {
   0%{
-    transform: translateY(20%);
-    opacity: 0;
+    transform: translateY(25%);
   }
   100%{
     transform: translateY(0.5%);
-    opacity: 1;
   }
 }
 
@@ -396,9 +515,10 @@ textarea{
 
 
 
-@media (max-width : 780px){
 
-  #Home{
+@media (max-width : 1000px){
+
+  .background{
     animation: imagePan 15s linear infinite;
   }
   @keyframes imagePan {
