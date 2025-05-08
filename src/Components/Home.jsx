@@ -24,11 +24,13 @@ export default function Home(){
 
     
     useEffect(()=>{
+
             let typeTimeout = null;
-            let bigEraseTimeout = null;
-            let eraseTimeout = null;
-        function type(){
             let target = document.querySelector(".interests .type");
+            target.classList.remove("fadeout");
+            target.textContent = "";
+            
+        function type(){
 
             if (charIndex < backgrounds[currIndex].description.length){
                 target.textContent += backgrounds[currIndex].description.charAt(charIndex);
@@ -36,30 +38,22 @@ export default function Home(){
                 typeTimeout = setTimeout(type, typeSpeed);
             }
             else{
-                bigEraseTimeout = setTimeout(erase, Erase);
-            }
-        }
-        function erase(){
-            let target = document.querySelector(".interests .type");
-            clearTimeout(typeTimeout);
-            if (charIndex >= 0){
-                target.textContent = target.textContent.substring(0, charIndex);
-                charIndex --;
-                eraseTimeout = setTimeout(erase, eraseSpeed);
-            }
-            else{
-                if (currIndex >= 3 ){
-                    setIndex(0);
+                target.classList.add("fadeout");
+                if (currIndex >= 3){
+                    setTimeout(()=>{
+                        setIndex(0);
+                    }, 1500)
                 }
                 else{
-                    setIndex(currIndex + 1);
+                    setTimeout(()=>{
+                        setIndex(currIndex + 1);
+                    }, 1500)
                 }
             }
         }
         type();
         return () =>{
-            clearTimeout(eraseTimeout);
-            clearTimeout(bigEraseTimeout);
+            clearTimeout(typeTimeout);
         }
     })
 
