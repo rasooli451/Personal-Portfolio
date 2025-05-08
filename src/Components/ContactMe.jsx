@@ -37,6 +37,17 @@ export default function ContactMe(){
       };
 
     return <section id="Contact">
+        <div className="snowflake"></div>
+        <div className="snowflake"></div>
+        <div className="snowflake"></div>
+        <div className="snowflake"></div>
+        <div className="snowflake"></div>
+        <div className="snowflake"></div>
+        <div className="snowflake"></div>
+        <div className="snowflake"></div>
+        <div className="snowflake"></div>
+        <div className="snowflake"></div>
+        <div className="snowflake"></div>
         <form onSubmit={onSubmit}>
             <h1>Contact Me</h1>
             <div className="inputBox">
