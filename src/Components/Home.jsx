@@ -3,20 +3,16 @@
 import profilepic from "../assets/images/Me/MeV1NoBgupscalededited.png";
 import github from "../assets/icons/github.svg";
 import linkedin from "../assets/icons/linkedin-original.svg";
-import books from "../assets/images/bgImages/books.jpg";
-import cinema from "../assets/images/bgImages/Cinema.jpg";
-import games from "../assets/images/bgImages/games.jpg";
-import ronaldo from "../assets/images/bgImages/Ronaldo.jpg";
 import { useState, useEffect} from "react";
 
 export default function Home(){
-    const backgrounds = [{img : books, description : "Sometimes in my free time, a book and a cup of coffee is enough to transfer me to another world where my imagination is unrestricted and anything is possible."}, {img : cinema, description : "As a dedicated cenephile, I can't appreciate cinema enough, I've watched most of the classics and have enjoyed modern masterpieces."}, {img : games, description : "Part of the reason I am interested in game development is because I like playing games, I've been an active gamer since I was a child and still play sometimes."}, {img : ronaldo, description : "I love watching and playing Football, i've been obsessed with it ever since I started playing when I was little and still do sometimes."}];
+    const backgrounds = [{img : "books.jpg", description : "Sometimes in my free time, a book and a cup of coffee is enough to transfer me to another world where my imagination is unrestricted and anything is possible."}, {img : "Cinema.jpg", description : "As a dedicated cenephile, I can't appreciate cinema enough, I've watched most of the classics and have enjoyed modern masterpieces."}, {img : "games.jpg", description : "Part of the reason I am interested in game development is because I like playing games, I've been an active gamer since I was a child and still play sometimes."}, {img : "Ronaldo.jpg", description : "I love watching and playing Football, i've been obsessed with it ever since I started playing when I was little and still do sometimes."}];
     const [currIndex, setIndex] = useState(0);
     let charIndex = 0;
     let typeSpeed = 100;
     let eraseSpeed = 30;
     let Erase = 1000;
-    let style = {background : "center/cover no-repeat " + "url(" + backgrounds[currIndex].img + ")"};
+    let style = {background : "center/cover no-repeat " + "url(/bgImages/" + backgrounds[currIndex].img + ")"};
 
     useEffect(()=>{
         const timer = setTimeout(()=>{

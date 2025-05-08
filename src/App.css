@@ -61,7 +61,6 @@ a{
   left: 0;
   top: 0;
   transition: background-image 1s linear;
-  -webkit-backface-visibility: hidden
 }
 
 
