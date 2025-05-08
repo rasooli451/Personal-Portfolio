@@ -140,7 +140,13 @@ a{
 
 .type{
    font-size: 1.3em;
-   font-family :cursive,sans-serif;
+   font-family :'Times New Roman', Times, serif;
+}
+
+
+
+.fadeout{
+  animation: fade-out 1.5s linear;
 }
 
 
@@ -486,7 +492,14 @@ textarea{
 
 
 
-
+@keyframes fade-out {
+  0%{
+    opacity: 1;
+  }
+  100%{
+    opacity: 0;
+  }
+}
 
 
 
