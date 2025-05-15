@@ -1,6 +1,6 @@
 
 
-import profilepic from "../assets/images/Me/MeV1NoBgupscalededited.png";
+import profilepic from "../assets/images/Me/alternateMeFinalResized.png";
 import github from "../assets/icons/github.svg";
 import linkedin from "../assets/icons/linkedin-original.svg";
 import { useState, useEffect} from "react";
@@ -10,8 +10,6 @@ export default function Home(){
     const [currIndex, setIndex] = useState(0);
     let charIndex = 0;
     let typeSpeed = 100;
-    let eraseSpeed = 30;
-    let Erase = 1000;
     let style = {background : "center/cover no-repeat " + "url(/bgImages/" + backgrounds[currIndex].img + ")"};
 
     useEffect(()=>{
